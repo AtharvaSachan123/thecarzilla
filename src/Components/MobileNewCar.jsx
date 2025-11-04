@@ -5,7 +5,6 @@ import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import ExpertSectionBackground from "./Images/mobile version/newcarexpert.png"
 import MobileSearchBar from "./MobileSearchBar";
-import MasterSlider from "./MasterSlider";
 import Background from "./Images/mobile version/futuristic-interior-sci-fi-room-background 2.png";
 import Car from "./Images/mobile version/view-3d-car-removebg-preview 1 (1).png";
 import ExportImage from "./Images/mobile version/newcarexport.png"
@@ -14,6 +13,7 @@ import FindCar from "./FindCar";
 import MobileBlogs from "./MobileBlogs";
 import MobileTestimonial from "./MobileTestimonial";
 import LiteApp from "./LiteApp";
+import Master from "./Master";
 
 const MobileNewCar = () => {
   const [size, setSize] = useState(window.innerWidth);
@@ -62,7 +62,7 @@ const MobileNewCar = () => {
         <>
           <MobileSearchBar />
           <div className="mobile-new-car-section-master">
-            <MasterSlider />
+            <Master />
           </div>
           <div className="mobile-new-car-container ">
             <div className="mobile-new-car-section">
