@@ -6,8 +6,9 @@ import SearchBar from './SearchBar';
 import MobileLogin from './MobileLogin';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faGear, faUser, faX } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faGear, faUser, faX, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
+import { useAuth } from '../context/AuthContext';
 
 const iconContainerStyle = {
   width: "2.6vw",
@@ -29,8 +30,14 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const [size, setSize] = useState(window.innerWidth);
+  const { user, isAuthenticated, logout, loading } = useAuth();
 
   const checkSize = () => setSize(window.innerWidth);
+
+  const handleLogout = () => {
+    logout();
+    setMenuOpen(false);
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -119,19 +126,42 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* Mobile Login Button */}
-          {size <= 500 && (
-            <button onClick={() => setLoginOpen(true)} className="mobileLoginBtn">
-              Login
-            </button>
+          {/* Mobile Login/User Button */}
+          {size <= 500 && !loading && (
+            isAuthenticated ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ 
+                  fontSize: '12px', 
+                  color: '#596780',
+                  maxWidth: '100px',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap'
+                }}>
+                  {user?.email}
+                </span>
+                <button onClick={handleLogout} className="mobileLoginBtn" style={{
+                  minWidth: 'auto',
+                  padding: '8px 12px'
+                }}>
+                  <FontAwesomeIcon icon={faSignOutAlt} />
+                </button>
+              </div>
+            ) : (
+              <button onClick={() => setLoginOpen(true)} className="mobileLoginBtn">
+                Login
+              </button>
+            )
           )}
 
-          {/* Menu Icon */}
-          <FontAwesomeIcon 
-            icon={menuOpen ? faX : faBars} 
-            className='menuIconNav' 
-            onClick={toggleMenu} 
-          />
+          {/* Menu Icon - Only show on mobile */}
+          {size <= 500 && (
+            <FontAwesomeIcon 
+              icon={menuOpen ? faX : faBars} 
+              className='menuIconNav' 
+              onClick={toggleMenu} 
+            />
+          )}
         </div>
 
         {/* Menu Dropdown */}
@@ -140,6 +170,40 @@ const Navbar = () => {
           <NavLink className='MenuDropdownOpt' to="/" onClick={scrollToContactForm}>Buy New Car</NavLink>
           <NavLink className='MenuDropdownOpt' to="/">Blog</NavLink>
           <NavLink className='MenuDropdownOpt' onClick={scrollToTop} to="/Services">Services</NavLink>
+          
+          {/* Auth section in menu */}
+          {!loading && isAuthenticated && (
+            <>
+              <div style={{
+                borderTop: '1px solid #eee',
+                margin: '10px 0',
+                padding: '10px',
+                fontSize: '14px',
+                color: '#596780'
+              }}>
+                <div style={{ marginBottom: '8px', fontWeight: '500' }}>
+                  Logged in as:
+                </div>
+                <div style={{ 
+                  fontSize: '12px',
+                  wordBreak: 'break-all'
+                }}>
+                  {user?.email}
+                </div>
+              </div>
+              <div 
+                className='MenuDropdownOpt' 
+                onClick={handleLogout}
+                style={{ 
+                  color: '#ff4444',
+                  cursor: 'pointer'
+                }}
+              >
+                <FontAwesomeIcon icon={faSignOutAlt} style={{ marginRight: '8px' }} />
+                Logout
+              </div>
+            </>
+          )}
         </div>
       </Stack>
 

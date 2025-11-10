@@ -135,14 +135,56 @@ const result = await db.query('SELECT * FROM your_table WHERE id = $1', [id]);
 | NODE_ENV | Environment (development/production) | development |
 | JWT_SECRET | Secret key for JWT authentication | - |
 
-## Next Steps
+## Authentication System
 
-1. Install dependencies: `npm install`
-2. Configure your `.env` file
-3. Set up your PostgreSQL database
-4. Create your database schema/tables
-5. Start building your API routes and controllers
-6. Test your endpoints
+This backend now includes a complete email-based OTP authentication system:
+
+### Features
+- ✅ Email OTP verification
+- ✅ Secure OTP hashing with bcrypt
+- ✅ 5-minute OTP expiration
+- ✅ 3 attempt limit per OTP
+- ✅ Auto user creation on first login
+- ✅ Resend OTP functionality
+
+### API Endpoints
+
+**Send OTP**
+```
+POST /api/auth/send-otp
+Body: { "email": "user@example.com" }
+```
+
+**Verify OTP**
+```
+POST /api/auth/verify-otp
+Body: { "email": "user@example.com", "otp": "123456" }
+```
+
+### Quick Start
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Configure your `.env` file:
+```bash
+cp .env.example .env
+# Edit .env with your database and Resend API credentials
+```
+
+3. Initialize the database:
+```bash
+npm run init-db
+```
+
+4. Start the server:
+```bash
+npm run dev
+```
+
+For detailed setup instructions, see [AUTHENTICATION_SETUP.md](../AUTHENTICATION_SETUP.md) in the root directory.
 
 ## License
 

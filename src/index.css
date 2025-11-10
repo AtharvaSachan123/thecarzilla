@@ -3844,6 +3844,59 @@ justify-content: center;
   color: #000;
 }
 
+/* OTP Verification Styles */
+.mobile-otp-back {
+  position: absolute;
+ top: 19px;
+  left: 9px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 5px 10px;
+}
+
+.mobile-otp-back:hover {
+  opacity: 0.7;
+}
+
+.mobile-otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.mobile-otp-box {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #E0E0E0;
+  border-radius: 15px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #000;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-otp-box:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.mobile-otp-box::placeholder {
+  color: transparent;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .mobile-login-background {
@@ -3866,6 +3919,23 @@ justify-content: center;
   .mobile-login-button {
     padding: 15px 18px;
     font-size: 15px;
+  }
+  
+  .mobile-otp-back {
+   top: 19px;
+    left: 9px;
+
+    font-size: 16px;
+  }
+  
+  .mobile-otp-box {
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+  }
+  
+  .mobile-otp-container {
+    gap: 15px;
   }
 }
 
