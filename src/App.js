@@ -1,5 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Function from "./Function";
 import Home from "./Components/Home";
 import PrivacyPolicy from './Components/PrivacyPolicy';
@@ -34,7 +34,7 @@ const App = () => {
   }, []);
 
   return(
-    <>   
+    <>
       <Routes>          
         <Route exact path="/" element={<Function/>} />
         <Route exact path="/Home"  element={<Home/>} />
