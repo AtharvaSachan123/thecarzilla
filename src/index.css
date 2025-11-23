@@ -4263,3 +4263,9 @@ font-weight: 500;
 width: 100%;
 text-align: left;
 }
+
+@media (min-width: 501px) {
+  .mobileLoginBtn {
+    display: none;
+  }
+}
