@@ -25,7 +25,8 @@ const ContactForm = () => {
       title: "Services",
       background: "#000000",
       color: "#FFFFFF",
-      image:  repairCar 
+      image:  repairCar ,
+      onClick: ()=> navigate("/mobileservices"),
     },
     {
       title: "Blogs",
@@ -50,12 +51,6 @@ const ContactForm = () => {
     window.addEventListener("resize", checkSize);
     return () => window.removeEventListener("resize", checkSize);
   }, []);
-
-
-
-
-
-
   const url = "https://sheetdb.io/api/v1/kitjormnr8ebr";
 
   const sendData = async (formData) => {

@@ -4119,3 +4119,147 @@ justify-content: center;
     display: none;
   }
 }
+
+/* Mobile Service css */
+.mobile-services-container-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+
+
+.mobile-service-container {
+position: relative;
+width: 350px;
+height: 110px;
+}
+
+
+.mobile-service-background {
+position: absolute;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, #B41019, #5B0000E5);
+border-radius: 10px;
+overflow: hidden;
+}
+
+
+.mobile-service-content {
+position: absolute;
+top: 8px;
+left: 0;
+padding: 12px;
+color: white;
+}
+
+
+.mobile-service-heading {
+width: 150px;
+font-size: 10px;
+font-weight: 700;
+line-height: 140%;
+}
+
+
+.mobile-service-description {
+width: 130px;
+margin-top: 4px;
+font-size: 5px;
+line-height: 140%;
+font-weight: 400;
+}
+
+
+.mobile-service-btn {
+margin-top: 11px;
+background-color: white;
+color: #7e0f0f;
+border: none;
+padding: 6px 10px;
+border-radius: 4px;
+font-size: 6px;
+line-height: 6px;
+font-weight: 700;
+cursor: pointer;
+}
+
+
+.mobile-service-image {
+position: absolute;
+width: 113px;
+height: 68px;
+top: 20px;
+left: 210px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+/* Diverse Car */
+
+.mobile-diverseServices-wrapper {
+width: 350px;
+margin: 20px auto;
+text-align: center;
+}
+
+
+.mobile-diverseServices-heading {
+font-size: 15px;
+font-weight: 600;
+margin-bottom: 17px;
+}
+
+
+.mobile-diverseServices-grid {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+gap: 10px;
+justify-items: center;
+}
+
+
+.mobile-diverseServices-card {
+width: 60px;
+height: 70px;
+background: #f4f4f4;
+border-radius: 12px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 6px;
+}
+
+
+.mobile-diverseServices-icon {
+width: 40px;
+height: 35px;
+object-fit: contain;
+}
+
+
+.mobile-diverseServices-text {
+font-size: 6px;
+margin-top: 6px;
+font-weight: 500;
+}
+
+
+.mobile-diverseServices-viewBtn {
+  display: flex;
+  align-items: center;     
+  justify-content: flex-start; 
+  gap: 2px;            
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 8px;
+  margin-top: 18px;
+}
+
+.mobile-diverseServices-viewBtnContainer {
+width: 100%;
+text-align: left;
+}

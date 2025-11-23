@@ -19,6 +19,7 @@ import DetailedBlog from "./Components/DetailedBlog"
 import Careers from "./Components/Careers"
 import MobileNewCar from "./Components/MobileNewCar"
 import MobileFooter from  "./Components/MobileFooter"
+import MobileServices from "./Components/MobileServices"
 
 
 const App = () => {
@@ -36,24 +37,25 @@ const App = () => {
   return(
     <>
       <Routes>          
-        <Route exact path="/" element={<Function/>} />
-        <Route exact path="/Home"  element={<Home/>} />
-        <Route exact path="/TermsAndConditions" element={<TermsCons />} />
-        <Route exact path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-        <Route exact path="/HowItWorks" element={<HowDoesItWorks />} />
-        <Route exact path="/Support" element={<CustomerSupport />} />
-        <Route exact path="/AboutUs" element={<AboutUs />} />
-        <Route exact path="/TermsAndConditions/:TermsAndConditionsII" element={<TermsCondII/>} />
-        <Route exact path="/PrivacyPolicy/:PrivacyPolicyII" element={<PrivacyPolicyII />} />
-        <Route exact path="/Login" element={<Login />} />
-        <Route exact path="/Login/:OtpVerify" element={<LoginII />} />
-        <Route exact path="/Services" element={<Services />} />
-        <Route exact path="/CancellationAndRefundPolicy" element={<CancellationAndRefund />} />
-        <Route exact path="/Careers" element={<Careers/>} />
-        <Route path="*" element={<Function />} /> 
+        <Route path="/Home"  element={<Home/>} />
+        <Route path="/TermsAndConditions" element={<TermsCons />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/HowItWorks" element={<HowDoesItWorks />} />
+        <Route path="/Support" element={<CustomerSupport />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/TermsAndConditions/:TermsAndConditionsII" element={<TermsCondII/>} />
+        <Route path="/PrivacyPolicy/:PrivacyPolicyII" element={<PrivacyPolicyII />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Login/:OtpVerify" element={<LoginII />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/CancellationAndRefundPolicy" element={<CancellationAndRefund />} />
+        <Route path="/Careers" element={<Careers/>} />
+        
         <Route path="/mobileblogs" element={<LoadBlog/>}/>
         <Route path="/mobiledetailblog" element={<DetailedBlog/>}/>
         <Route path="/mobilenewcar" element={<MobileNewCar/>}/>
+        <Route path="/mobileservices" element={<MobileServices/>}/>
+        <Route path="*" element={<Function />} /> 
       </Routes>
 
       {/* Hide footer if on the Login page */}
